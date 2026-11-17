@@ -1,0 +1,23 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": { "component": { "type": "device", "name": "Beispielmaschine" } },
+  "components": [
+    { "bom-ref": "plc", "type": "firmware", "supplier": { "name": "Siemens" }, "name": "SIMATIC S7-1200 CPU 1214C", "version": "V4.5.0", "cpe": "" },
+    { "bom-ref": "hmi", "type": "application", "supplier": { "name": "Siemens" }, "name": "WinCC Runtime Advanced", "version": "V17" },
+    { "bom-ref": "ipc-os", "type": "operating-system", "supplier": { "name": "Microsoft" }, "name": "Windows 10 IoT Enterprise LTSC", "version": "2019" },
+    { "bom-ref": "openssl", "type": "library", "supplier": { "name": "OpenSSL" }, "name": "openssl", "version": "3.0.7", "purl": "pkg:generic/openssl@3.0.7" },
+    { "bom-ref": "router", "type": "device", "supplier": { "name": "Beispielhersteller" }, "name": "Fernwartungsrouter", "version": "2.1" }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2022-3602",
+      "description": "X.509 Email Address 4-byte Buffer Overflow in OpenSSL 3.0.0–3.0.6.",
+      "ratings": [ { "score": 7.5, "method": "CVSSv31", "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" } ],
+      "cwes": [ 787 ],
+      "affects": [ { "ref": "openssl" } ],
+      "analysis": { "state": "not_affected", "detail": "Version 3.0.7 enthält den Fix." }
+    }
+  ]
+}
