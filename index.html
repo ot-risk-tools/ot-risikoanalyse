@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>OT-Risikoanalyse</title>
+  <meta name="description" content="CVE-basierte OT-Risikoanalyse für Maschinen und Anlagen nach IEC 62443 mit Maßnahmenempfehlungen">
+  <meta name="theme-color" content="#0f2a3d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OT-Risiko">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M16 2 4 7v8c0 7.5 5.1 13.4 12 15 6.9-1.6 12-7.5 12-15V7z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M11 16.5l3.5 3.5L21.5 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>OT-Risikoanalyse</span>
+    </div>
+    <div class="project-switch">
+      <select id="projectSelect" aria-label="Projekt wählen"></select>
+      <button class="btn icon" data-action="project-new" title="Neues Projekt" aria-label="Neues Projekt">＋</button>
+      <a class="btn icon" href="anleitung.html" target="_blank" rel="noopener" title="Anleitung öffnen" aria-label="Anleitung öffnen">?</a>
+      <a class="btn icon" href="en/index.html" lang="en" title="English version" aria-label="English version">EN</a>
+      <button class="btn icon" data-action="menu" title="Daten & Sicherung" aria-label="Daten und Sicherung">⋯</button>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" role="tablist">
+    <button role="tab" data-tab="kontext">1 · Kontext</button>
+    <button role="tab" data-tab="sbom">2 · Komponenten</button>
+    <button role="tab" data-tab="cves">3 · Schwachstellen</button>
+    <button role="tab" data-tab="matrix">4 · Risikomatrix</button>
+    <button role="tab" data-tab="plan">5 · Maßnahmen & Bericht</button>
+  </nav>
+
+  <main id="view" tabindex="-1"></main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div class="modal-head"><h2 id="modalTitle"></h2><button class="btn icon" data-action="modal-close" aria-label="Schließen">✕</button></div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="fileInput" hidden>
+
+  <script src="js/risk.js"></script>
+  <script src="js/mitigations.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/local.js"></script>
+  <script src="js/cyclonedx.js"></script>
+  <script src="js/demo.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

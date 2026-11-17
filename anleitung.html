@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>OT-Risikoanalyse – Anleitung</title>
+<style>
+  :root { --bg:#f3f5f8; --card:#fff; --text:#16202b; --muted:#5b6878; --line:#d7dde5; --accent:#0b6bcb; --soft:#e3effb; --brand:#0f2a3d; --warn:#fdf4d2; --ok:#e2f4e9; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0d141b; --card:#151f29; --text:#e6edf3; --muted:#93a1b0; --line:#2a3846; --accent:#4ea1ff; --soft:#15314d; --warn:#3a3110; --ok:#143223; color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  header { background:var(--brand); color:#fff; padding:28px 16px; }
+  header div, main { max-width:820px; margin:0 auto; }
+  header h1 { margin:0 0 4px; font-size:1.7rem; }
+  header p { margin:0; opacity:.85; }
+  main { padding:20px 16px 60px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:16px; }
+  h2 { margin:0 0 10px; font-size:1.25rem; display:flex; gap:12px; align-items:center; }
+  h2 .n { flex:none; width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-size:1rem; }
+  h3 { margin:16px 0 4px; font-size:1.02rem; }
+  p { margin:8px 0; }
+  ol, ul { margin:8px 0; padding-left:24px; }
+  li { margin:5px 0; }
+  .btn { display:inline-block; border:1px solid var(--line); border-radius:7px; padding:1px 9px; font-weight:600; background:var(--soft); white-space:nowrap; font-size:.94em; }
+  .tip { background:var(--ok); border-radius:8px; padding:10px 14px; margin:12px 0; }
+  .warn { background:var(--warn); border-radius:8px; padding:10px 14px; margin:12px 0; }
+  .muted { color:var(--muted); }
+  .short { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:12px; }
+  .short div { background:var(--soft); border-radius:10px; padding:12px; font-size:.95rem; }
+  .short strong { display:block; font-size:1.05rem; }
+  dl { margin:0; } dt { font-weight:650; margin-top:10px; } dd { margin:2px 0 0; color:var(--muted); }
+  code { background:var(--soft); padding:1px 6px; border-radius:5px; font-size:.9em; }
+  a { color:var(--accent); }
+  @media print { body { background:#fff; font-size:11pt; } header { background:none; color:#000; padding:0 0 10px; } section { break-inside:avoid; border-color:#bbb; } }
+</style>
+</head>
+<body>
+<header><div>
+  <h1>OT-Risikoanalyse – Anleitung</h1>
+  <p>Von der Komponentenliste zum Maßnahmenplan. Alles per Klick, ohne Kommandozeile.</p>
+</div></header>
+<main>
+
+<section>
+  <h2>Das Wichtigste in Kürze</h2>
+  <div class="short">
+    <div><strong>1. Starten</strong>Doppelklick auf „OT-Risikoanalyse starten“</div>
+    <div><strong>2. Anlegen</strong>„Neue Analyse starten“</div>
+    <div><strong>3. Komponenten</strong>Gerät hinzufügen, scannen oder Datei laden</div>
+    <div><strong>4. Suchen</strong>„Schwachstellen jetzt suchen“</div>
+    <div><strong>5. Ergebnis</strong>Maßnahmenplan ansehen und als PDF speichern</div>
+  </div>
+  <p class="muted">Zum Ausprobieren ohne eigene Daten: auf der Startseite <span class="btn">Beispiel ansehen</span> anklicken.</p>
+</section>
+
+<section>
+  <h2><span class="n">1</span>App starten</h2>
+  <ol>
+    <li>Den Ordner <strong>Programm Risk</strong> öffnen.</li>
+    <li>Doppelklick auf <strong>OT-Risikoanalyse starten</strong>.</li>
+    <li>Es öffnet sich ein kleines schwarzes Fenster und danach automatisch der Browser mit der App.</li>
+  </ol>
+  <div class="warn"><strong>Das schwarze Fenster offen lassen</strong>, solange du arbeitest. Zum Beenden einfach dieses Fenster schließen. Deine Daten sind dann bereits gespeichert.</div>
+  <div class="tip">Tipp: Rechtsklick auf die Datei → (unter Windows 11 zuerst „Weitere Optionen anzeigen“) → „Senden an“ → „Desktop (Verknüpfung erstellen)“. Dann startest du die App künftig direkt vom Desktop.</div>
+  <p class="muted">Falls Windows beim ersten Start nachfragt („Der Computer wurde durch Windows geschützt“): „Weitere Informationen“ → „Trotzdem ausführen“.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Analyse anlegen</h2>
+  <ol>
+    <li><span class="btn">Neue Analyse starten</span> anklicken.</li>
+    <li>Einen Namen eintragen, z. B. „Drahtziehmaschine Kunde Muster“.</li>
+    <li>Auswählen, wie die Maschine angebunden ist (ohne Netzwerk / im Produktionsnetz mit Fernwartung / mit Internet- oder Cloud-Anbindung).</li>
+    <li><span class="btn">Anlegen</span> anklicken.</li>
+  </ol>
+  <p>Mehr ist am Anfang nicht nötig. Unter <strong>1 · Kontext</strong> kannst du später verfeinern: Wie gefährlich wäre eine Manipulation für Personen? Wie schlimm ist ein Stillstand? Lassen sich Updates schnell einspielen? Diese Angaben bestimmen, wie hoch die App ein Risiko einstuft.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Komponenten hinzufügen</h2>
+  <p>Unter <strong>2 · Komponenten</strong> gibt es drei Wege. Du kannst sie beliebig kombinieren.</p>
+
+  <h3>Weg A: Gerät hinzufügen (SPS, HMI, Antrieb, Switch, Betriebssystem …)</h3>
+  <ol>
+    <li><span class="btn">Gerät hinzufügen</span> anklicken.</li>
+    <li>Im Suchfeld ein Stichwort eingeben, z. B. „S7-1500“ oder „SCALANCE XC208“, und <span class="btn">Suchen</span> anklicken. Die Suche in der Produktliste dauert einige Sekunden.</li>
+    <li>Das passende Produkt in der Liste anklicken.</li>
+    <li>Die Version (Firmware-Stand) eintragen oder aus den Vorschlägen wählen.</li>
+    <li><span class="btn">Speichern</span>. In der Liste steht jetzt „✓ automatisch prüfbar“.</li>
+  </ol>
+  <div class="tip">Die Version ist wichtig: Nur mit Version findet die App genau die Schwachstellen, die diesen Stand wirklich betreffen.</div>
+
+  <h3>Weg B: Software scannen (PC-Software, Linux-Geräte, Container)</h3>
+  <ol>
+    <li><span class="btn">Software scannen</span> anklicken.</li>
+    <li>Den Ordner auswählen, in dem die Software liegt: Ordner anklicken, um hineinzugehen; mit „↑ nach oben“ zurück.</li>
+    <li>Angeben, was im Ordner liegt: ein <em>Software-Projekt</em> oder <em>installierte Software / ein Geräte-Dateisystem</em>.</li>
+    <li><span class="btn">Diesen Ordner scannen</span>. Das Programm Trivy durchsucht den Ordner; das dauert von wenigen Sekunden bis zu einigen Minuten.</li>
+    <li>Die Zusammenfassung prüfen und <span class="btn">Übernehmen</span> anklicken.</li>
+  </ol>
+  <p class="muted">Trivy erkennt Software-Pakete. Die Firmware von Steuerungen, Antrieben und Netzwerkgeräten erkennt es nicht – dafür ist Weg A da.</p>
+
+  <h3>Weg C: Datei importieren</h3>
+  <p>Wenn du vom Lieferanten oder aus der Entwicklung eine Stückliste (SBOM) im Format <strong>CycloneDX</strong> hast: <span class="btn">Datei importieren</span> anklicken, Datei auswählen, <span class="btn">Übernehmen</span>.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span>Schwachstellen suchen</h2>
+  <ol>
+    <li>Unten auf <span class="btn">Schwachstellen jetzt suchen</span> klicken.</li>
+    <li>Warten, bis der Fortschrittsbalken durchgelaufen ist. Bei vielen Geräten dauert das etwas, weil die Schwachstellen-Datenbank nur wenige Abfragen pro Minute erlaubt. Die App wartet von selbst.</li>
+    <li>Am Ende zeigt die App, was gefunden wurde.</li>
+  </ol>
+  <p>Steht dort, dass Komponenten <strong>nicht automatisch geprüft</strong> werden konnten: auf <span class="btn">Zuordnen</span> klicken und wie bei Weg A Produkt und Version wählen. Danach noch einmal suchen.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Schwachstellen bewerten</h2>
+  <p>Unter <strong>3 · Schwachstellen</strong> stehen alle Funde, die gefährlichsten zuerst. Rechts siehst du das Risiko <em>vorher → nachher</em>.</p>
+  <ol>
+    <li><span class="btn">Alle Empfehlungen übernehmen</span> anklicken. Damit ist für jede Schwachstelle der Vorschlag der App ausgewählt.</li>
+    <li>Optional: einzelne Schwachstelle antippen. Dort steht, <em>warum</em> das Risiko so hoch ist, und du kannst Maßnahmen an- oder abwählen.</li>
+    <li>Trifft eine Schwachstelle auf die Maschine nicht zu, den Status auf <em>Nicht betroffen</em> stellen und kurz begründen.</li>
+  </ol>
+  <h3>Was die Farbmarken bedeuten</h3>
+  <ul>
+    <li><strong>aktiv ausgenutzt</strong>: Diese Schwachstelle wird bereits für echte Angriffe benutzt. Höchste Dringlichkeit.</li>
+    <li><strong>Akzeptanz erst nach Patch/Austausch</strong>: Mit Sofortmaßnahmen allein bleibt das Risiko über deiner Grenze. Es sinkt erst mit dem Update. Dieses Übergangsrisiko muss jemand bewusst tragen.</li>
+    <li><strong>Entscheidung nötig</strong>: Keine verfügbare Maßnahme reicht aus. Die Verantwortlichen müssen das Risiko formal akzeptieren oder die Komponente ersetzen.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">6</span>Maßnahmenplan und Bericht</h2>
+  <p>Unter <strong>5 · Maßnahmen &amp; Bericht</strong> fasst die App alles zusammen:</p>
+  <ul>
+    <li><strong>Sofort / Kurzfristig / Geplant</strong>: was in welcher Reihenfolge zu tun ist, mit konkreten Schritten und dem Bezug zur Norm IEC 62443.</li>
+    <li><strong>Entscheidungen nötig</strong>: Punkte, die jemand ausdrücklich entscheiden muss.</li>
+  </ul>
+  <ol>
+    <li><span class="btn">Bericht drucken / als PDF speichern</span> anklicken.</li>
+    <li>Im Druckfenster als Drucker „Als PDF speichern“ wählen und speichern.</li>
+  </ol>
+  <p class="muted">Weitere Ausgaben: eine Tabelle für Excel (CSV) und eine CycloneDX-Datei mit VEX für Kunden oder andere Werkzeuge.</p>
+</section>
+
+<section>
+  <h2>Daten und Sicherung</h2>
+  <ul>
+    <li>Alles wird <strong>automatisch gespeichert</strong>. Es gibt keinen Speichern-Knopf.</li>
+    <li>Die Daten liegen auf deinem PC im Ordner <code>Programm Risk\daten</code>. Wenn du den ganzen Ordner <strong>Programm Risk</strong> kopierst (z. B. auf einen USB-Stick), hast du Programm und Daten gesichert.</li>
+    <li>Über <span class="btn">⋯</span> oben rechts: <em>Sicherung speichern</em>, <em>Sicherung laden</em>, einzelne Analyse weitergeben, alle Daten löschen.</li>
+    <li>Die Daten sind nicht verschlüsselt. Für vertrauliche Kundendaten einen PC mit Festplattenverschlüsselung verwenden.</li>
+    <li>Ins Internet gehen nur Anfragen nach Produktnamen und CVE-Nummern (an NVD, FIRST und CISA). Deine Projektdaten verlassen den PC nicht.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>iPhone, iPad und Mac</h2>
+  <p>Die Start-Datei funktioniert nur unter Windows. Auf iPhone, iPad und Mac öffnest du die App im Browser unter dieser Adresse:</p>
+  <p><a href="https://ot-risk-tools.github.io/ot-risikoanalyse/">https://ot-risk-tools.github.io/ot-risikoanalyse/</a></p>
+  <ol>
+    <li>Die Adresse auf iPhone oder iPad in <strong>Safari</strong> öffnen.</li>
+    <li>Auf <strong>Teilen</strong> tippen (Quadrat mit Pfeil nach oben).</li>
+    <li><strong>Zum Home-Bildschirm</strong> wählen. Die App liegt danach wie jede andere App auf dem Gerät.</li>
+  </ol>
+  <p>Dort funktioniert alles außer „Software scannen“. Jedes Gerät hat seinen eigenen Datenstand. Scan-Ergebnisse und Analysen lassen sich als Datei zwischen den Geräten austauschen (<span class="btn">⋯</span> → Sicherung speichern / laden).</p>
+</section>
+
+<section>
+  <h2>Wenn etwas nicht klappt</h2>
+  <dl>
+    <dt>Oben steht „Das Startfenster ist geschlossen“ oder der Browser zeigt „Seite nicht erreichbar“.</dt>
+    <dd>Das schwarze Startfenster läuft nicht mehr. „OT-Risikoanalyse starten“ erneut doppelklicken. Deine Eingaben gehen dabei nicht verloren.</dd>
+    <dt>Die Produktsuche findet nichts.</dt>
+    <dd>Kürzeres Stichwort verwenden (nur die Typbezeichnung, z. B. „XC208“) oder den englischen Namen probieren. Nicht jedes Produkt steht in der Liste – dann die Komponente trotzdem anlegen und Schwachstellen über die CVE-Nummern aus der Hersteller-Meldung von Hand hinzufügen (Schritt 3, „Einzelne Schwachstelle von Hand hinzufügen“).</dd>
+    <dt>Die Suche dauert lange oder meldet „NVD überlastet“.</dt>
+    <dd>Die öffentliche Datenbank ist zeitweise ausgelastet. Ein paar Minuten warten und noch einmal suchen. Bereits Gefundenes bleibt erhalten.</dd>
+    <dt>„Software scannen“ meldet, Trivy sei nicht installiert.</dt>
+    <dd>Die App zeigt dann den einen Befehl an, mit dem Trivy einmalig installiert wird. Auf diesem PC ist Trivy bereits vorhanden.</dd>
+    <dt>Der Scan findet keine Pakete.</dt>
+    <dd>Den Scan mit der anderen Einstellung wiederholen („Installierte Software oder Geräte-Dateisystem“ statt „Software-Projekt“) oder einen Ordner weiter oben wählen.</dd>
+    <dt>Ich habe mich verklickt.</dt>
+    <dd>Jede Auswahl lässt sich ändern. Gelöscht wird nur nach einer Rückfrage.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Begriffe kurz erklärt</h2>
+  <dl>
+    <dt>CVE</dt><dd>Eindeutige Nummer einer öffentlich bekannten Schwachstelle, z. B. CVE-2021-44228.</dd>
+    <dt>NVD</dt><dd>Öffentliche Schwachstellen-Datenbank der US-Behörde NIST. Von dort kommen Produktliste und Schwachstellen.</dd>
+    <dt>CVSS</dt><dd>Allgemeine Schwere einer Schwachstelle von 0 bis 10, unabhängig von deiner Maschine.</dd>
+    <dt>EPSS</dt><dd>Geschätzte Wahrscheinlichkeit, dass die Schwachstelle in den nächsten 30 Tagen ausgenutzt wird.</dd>
+    <dt>Aktiv ausgenutzt (CISA KEV)</dt><dd>Liste der Schwachstellen, die nachweislich für Angriffe verwendet werden.</dd>
+    <dt>Risiko (1 bis 25)</dt><dd>Eintrittswahrscheinlichkeit × Auswirkung, bewertet für <em>deine</em> Maschine und ihre Umgebung. Bis 4 niedrig, bis 9 mittel, bis 14 hoch, ab 15 kritisch.</dd>
+    <dt>Akzeptanzschwelle</dt><dd>Der Risikowert, bis zu dem ein Risiko als tragbar gilt. Voreingestellt: 4.</dd>
+    <dt>SBOM / CycloneDX</dt><dd>Stückliste der Software einer Maschine; CycloneDX ist ein Standardformat dafür.</dd>
+    <dt>VEX</dt><dd>Zusatz zur Stückliste: Welche Schwachstelle betrifft das Produkt wirklich und wie ist der Stand?</dd>
+    <dt>Trivy</dt><dd>Kostenloses Prüfprogramm, das Software-Pakete in einem Ordner erkennt und ihre Schwachstellen meldet.</dd>
+    <dt>IEC 62443, SR, SL-T</dt><dd>Normenreihe für die Sicherheit industrieller Anlagen. SR sind einzelne Anforderungen daraus; SL-T ist das angestrebte Schutzniveau (1 bis 4).</dd>
+  </dl>
+  <p class="muted" style="margin-top:14px">Die App liefert eine begründete Empfehlung. Sie ersetzt nicht die fachliche Prüfung im Einzelfall. <a href="rechtliches.html">Datenschutz und rechtliche Hinweise</a></p>
+</section>
+
+</main>
+</body>
+</html>
