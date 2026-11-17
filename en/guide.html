@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>OT Risk Analysis – Guide</title>
+<style>
+  :root { --bg:#f3f5f8; --card:#fff; --text:#16202b; --muted:#5b6878; --line:#d7dde5; --accent:#0b6bcb; --soft:#e3effb; --brand:#0f2a3d; --warn:#fdf4d2; --ok:#e2f4e9; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0d141b; --card:#151f29; --text:#e6edf3; --muted:#93a1b0; --line:#2a3846; --accent:#4ea1ff; --soft:#15314d; --warn:#3a3110; --ok:#143223; color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  header { background:var(--brand); color:#fff; padding:28px 16px; }
+  header div, main { max-width:820px; margin:0 auto; }
+  header h1 { margin:0 0 4px; font-size:1.7rem; }
+  header p { margin:0; opacity:.85; }
+  main { padding:20px 16px 60px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:16px; }
+  h2 { margin:0 0 10px; font-size:1.25rem; display:flex; gap:12px; align-items:center; }
+  h2 .n { flex:none; width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-size:1rem; }
+  h3 { margin:16px 0 4px; font-size:1.02rem; }
+  p { margin:8px 0; }
+  ol, ul { margin:8px 0; padding-left:24px; }
+  li { margin:5px 0; }
+  .btn { display:inline-block; border:1px solid var(--line); border-radius:7px; padding:1px 9px; font-weight:600; background:var(--soft); white-space:nowrap; font-size:.94em; }
+  .tip { background:var(--ok); border-radius:8px; padding:10px 14px; margin:12px 0; }
+  .warn { background:var(--warn); border-radius:8px; padding:10px 14px; margin:12px 0; }
+  .muted { color:var(--muted); }
+  .short { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:12px; }
+  .short div { background:var(--soft); border-radius:10px; padding:12px; font-size:.95rem; }
+  .short strong { display:block; font-size:1.05rem; }
+  dl { margin:0; } dt { font-weight:650; margin-top:10px; } dd { margin:2px 0 0; color:var(--muted); }
+  code { background:var(--soft); padding:1px 6px; border-radius:5px; font-size:.9em; }
+  a { color:var(--accent); }
+  @media print { body { background:#fff; font-size:11pt; } header { background:none; color:#000; padding:0 0 10px; } section { break-inside:avoid; border-color:#bbb; } }
+</style>
+</head>
+<body>
+<header><div>
+  <h1>OT Risk Analysis – Guide</h1>
+  <p>From the component list to the action plan. All by clicking, no command line.</p>
+</div></header>
+<main>
+
+<section>
+  <h2>The essentials in brief</h2>
+  <div class="short">
+    <div><strong>1. Open</strong>Open the app in your browser</div>
+    <div><strong>2. Create</strong>“Start a new analysis”</div>
+    <div><strong>3. Components</strong>Add a device, scan or load a file</div>
+    <div><strong>4. Search</strong>“Search for vulnerabilities now”</div>
+    <div><strong>5. Result</strong>View the action plan and save it as a PDF</div>
+  </div>
+  <p class="muted">To try it out without your own data: click <span class="btn">View the example</span> on the start page.</p>
+</section>
+
+<section>
+  <h2><span class="n">1</span>Open the app</h2>
+  <p>Open this address in your browser. It works on Windows, Mac, iPhone and iPad:</p>
+  <p><a href="https://ot-risk-tools.github.io/ot-risikoanalyse/en/">https://ot-risk-tools.github.io/ot-risikoanalyse/en/</a></p>
+  <p>The German edition is at <a href="https://ot-risk-tools.github.io/ot-risikoanalyse/">https://ot-risk-tools.github.io/ot-risikoanalyse/</a>. The <span class="btn">DE</span> button at the top of the app switches to it. Both editions share the same analyses on a device.</p>
+  <h3>On a Windows PC with the start file</h3>
+  <ol>
+    <li>Open the folder <strong>Programm Risk</strong>.</li>
+    <li>Double-click <strong>OT-Risikoanalyse starten</strong>.</li>
+    <li>A small black window opens, followed automatically by the browser with the app (German edition). Click <span class="btn">EN</span> at the top to switch to English.</li>
+  </ol>
+  <div class="warn"><strong>Leave the black window open</strong> while you work. To quit, simply close that window. Your data has already been saved by then.</div>
+  <p class="muted">Only this way offers “Scan software” with one click and the extra backup as a file on the PC.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Create an analysis</h2>
+  <ol>
+    <li>Click <span class="btn">Start a new analysis</span>.</li>
+    <li>Enter a name, e.g. “Wire drawing machine, customer Sample”.</li>
+    <li>Choose how the machine is connected (without network / in the production network with remote maintenance / with internet or cloud connection).</li>
+    <li>Click <span class="btn">Create</span>.</li>
+  </ol>
+  <p>That is all you need at the start. Under <strong>1 · Context</strong> you can refine things later: how dangerous would manipulation be for people? How bad is a standstill? Can updates be installed quickly? These settings determine how high the app rates a risk.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Add components</h2>
+  <p>Under <strong>2 · Components</strong> there are three ways. You can combine them freely.</p>
+
+  <h3>Way A: add a device (PLC, HMI, drive, switch, operating system …)</h3>
+  <ol>
+    <li>Click <span class="btn">Add a device</span>.</li>
+    <li>Type a keyword into the search field, e.g. “S7-1500” or “SCALANCE XC208”, and click <span class="btn">Search</span>. Searching the product list takes a few seconds.</li>
+    <li>Click the matching product in the list.</li>
+    <li>Enter the version (firmware level) or pick it from the suggestions.</li>
+    <li><span class="btn">Save</span>. The list now shows “✓ automatic check”.</li>
+  </ol>
+  <div class="tip">The version matters: only with a version does the app find exactly the vulnerabilities that really affect that level.</div>
+
+  <h3>Way B: scan software (PC software, Linux devices, containers)</h3>
+  <p class="muted">Available on a Windows PC when the app was opened through the start file.</p>
+  <ol>
+    <li>Click <span class="btn">Scan software</span>.</li>
+    <li>Choose the folder that contains the software: click a folder to go into it; “↑ up” goes back.</li>
+    <li>State what is in the folder: a <em>software project</em> or <em>installed software / a device file system</em>.</li>
+    <li><span class="btn">Scan this folder</span>. The program Trivy searches the folder; this takes from a few seconds to a few minutes.</li>
+    <li>Check the summary and click <span class="btn">Add</span>.</li>
+  </ol>
+  <p class="muted">Trivy detects software packages. It does not detect the firmware of controllers, drives and network devices – that is what way A is for.</p>
+
+  <h3>Way C: import a file</h3>
+  <p>If you have a bill of materials (SBOM) in <strong>CycloneDX</strong> format from a supplier or from development: click <span class="btn">Import a file</span>, choose the file, <span class="btn">Add</span>.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span>Search for vulnerabilities</h2>
+  <ol>
+    <li>Click <span class="btn">Search for vulnerabilities now</span> at the bottom.</li>
+    <li>Wait until the progress bar has finished. With many devices this takes a while because the vulnerability database allows only a few queries per minute. The app waits by itself.</li>
+    <li>At the end the app shows what was found.</li>
+  </ol>
+  <p>If it says that components <strong>could not be checked automatically</strong>: click <span class="btn">Assign</span> and choose product and version as in way A. Then search again.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Assess vulnerabilities</h2>
+  <p>Under <strong>3 · Vulnerabilities</strong> you find all findings, the most dangerous first. On the right you see the risk <em>before → after</em>.</p>
+  <ol>
+    <li>Click <span class="btn">Apply all recommendations</span>. This selects the app's proposal for every vulnerability.</li>
+    <li>Optional: tap a single vulnerability. It shows <em>why</em> the risk is that high, and you can select or deselect measures.</li>
+    <li>If a vulnerability does not apply to the machine, set the status to <em>Not affected</em> and give a short reason.</li>
+  </ol>
+  <h3>What the coloured labels mean</h3>
+  <ul>
+    <li><strong>actively exploited</strong>: this vulnerability is already being used in real attacks. Highest urgency.</li>
+    <li><strong>acceptance only after patch/replacement</strong>: with immediate measures alone the risk stays above your limit. It only drops with the update. Someone has to carry this interim risk deliberately.</li>
+    <li><strong>decision needed</strong>: no available measure is enough. Those responsible have to accept the risk formally or replace the component.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">6</span>Action plan and report</h2>
+  <p>Under <strong>5 · Measures &amp; report</strong> the app sums everything up:</p>
+  <ul>
+    <li><strong>Immediate / Short term / Planned</strong>: what to do in which order, with concrete steps and the reference to the IEC 62443 standard.</li>
+    <li><strong>Decisions needed</strong>: points that someone has to decide explicitly.</li>
+  </ul>
+  <ol>
+    <li>Click <span class="btn">Print the report / save as PDF</span>.</li>
+    <li>In the print window choose “Save as PDF” as the printer and save.</li>
+  </ol>
+  <p class="muted">Further outputs: a table for Excel (CSV) and a CycloneDX file with VEX for customers or other tools.</p>
+</section>
+
+<section>
+  <h2>Data and backup</h2>
+  <ul>
+    <li>Everything is <strong>saved automatically</strong>. There is no save button.</li>
+    <li>The data stays in the browser of the device you are using. Each device has its own data.</li>
+    <li>Via <span class="btn">⋯</span> at the top right: <em>Save a backup</em>, <em>Load a backup</em>, pass on a single analysis, delete all data. Use the backup file to move analyses between devices.</li>
+    <li>If you clear your browser data, the analyses are gone. Save a backup regularly.</li>
+    <li>The data is not encrypted. For confidential customer data use a device with disk encryption.</li>
+    <li>Only queries for product names and CVE numbers go to the internet (to NVD, FIRST and CISA). Your project data does not leave the device.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>iPhone, iPad and Mac</h2>
+  <ol>
+    <li>Open the address on iPhone or iPad in <strong>Safari</strong>.</li>
+    <li>Tap <strong>Share</strong> (the square with the arrow pointing up).</li>
+    <li>Choose <strong>Add to Home Screen</strong>. The app then sits on the device like any other app.</li>
+  </ol>
+  <p>On a Mac in Safari: <em>File → Add to Dock</em>. Everything works there except “Scan software”.</p>
+</section>
+
+<section>
+  <h2>If something does not work</h2>
+  <dl>
+    <dt>The top of the page says “The start window is closed” or the browser shows “This site can't be reached”.</dt>
+    <dd>The black start window is no longer running. Double-click “OT-Risikoanalyse starten” again. Your entries are not lost.</dd>
+    <dt>The product search finds nothing.</dt>
+    <dd>Use a shorter keyword (only the type designation, e.g. “XC208”). Not every product is in the list – in that case create the component anyway and add vulnerabilities by hand using the CVE numbers from the vendor advisory (step 3, “Add a single vulnerability by hand”).</dd>
+    <dt>The search takes a long time or reports “NVD overloaded”.</dt>
+    <dd>The public database is busy at times. Wait a few minutes and search again. What has already been found is kept.</dd>
+    <dt>“Scan software” says Trivy is not installed.</dt>
+    <dd>The app then shows the one command that installs Trivy once.</dd>
+    <dt>The scan finds no packages.</dt>
+    <dd>Repeat the scan with the other setting (“Installed software or device file system” instead of “Software project”) or choose a folder one level up.</dd>
+    <dt>I clicked the wrong thing.</dt>
+    <dd>Every choice can be changed. Nothing is deleted without a confirmation prompt.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Terms in brief</h2>
+  <dl>
+    <dt>CVE</dt><dd>Unique number of a publicly known vulnerability, e.g. CVE-2021-44228.</dd>
+    <dt>NVD</dt><dd>Public vulnerability database of the US agency NIST. The product list and the vulnerabilities come from there.</dd>
+    <dt>CVSS</dt><dd>General severity of a vulnerability from 0 to 10, independent of your machine.</dd>
+    <dt>EPSS</dt><dd>Estimated probability that the vulnerability will be exploited within the next 30 days.</dd>
+    <dt>Actively exploited (CISA KEV)</dt><dd>List of vulnerabilities that are known to be used in attacks.</dd>
+    <dt>Risk (1 to 25)</dt><dd>Likelihood × impact, rated for <em>your</em> machine and its environment. Up to 4 low, up to 9 medium, up to 14 high, from 15 critical.</dd>
+    <dt>Acceptance threshold</dt><dd>The risk value up to which a risk is considered tolerable. Default: 4.</dd>
+    <dt>SBOM / CycloneDX</dt><dd>Bill of materials of a machine's software; CycloneDX is a standard format for it.</dd>
+    <dt>VEX</dt><dd>Addition to the bill of materials: which vulnerability really affects the product, and what is its status?</dd>
+    <dt>Trivy</dt><dd>Free scanner that detects software packages in a folder and reports their vulnerabilities.</dd>
+    <dt>IEC 62443, SR, SL-T</dt><dd>Series of standards for the security of industrial plants. SRs are individual requirements from it; SL-T is the target protection level (1 to 4).</dd>
+  </dl>
+  <p class="muted" style="margin-top:14px">The app gives a reasoned recommendation. It does not replace an expert review of the individual case. <a href="legal.html">Privacy and legal notes</a></p>
+</section>
+
+</main>
+</body>
+</html>

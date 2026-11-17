@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>OT Risk Analysis – Privacy and legal notes</title>
+<style>
+  :root { --bg:#f3f5f8; --card:#fff; --text:#16202b; --muted:#5b6878; --line:#d7dde5; --accent:#0b6bcb; --soft:#e3effb; --brand:#0f2a3d; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0d141b; --card:#151f29; --text:#e6edf3; --muted:#93a1b0; --line:#2a3846; --accent:#4ea1ff; --soft:#15314d; color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  header { background:var(--brand); color:#fff; padding:28px 16px; }
+  header div, main { max-width:820px; margin:0 auto; }
+  header h1 { margin:0 0 4px; font-size:1.6rem; }
+  header p { margin:0; opacity:.85; }
+  main { padding:20px 16px 60px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:16px; }
+  h2 { margin:0 0 10px; font-size:1.25rem; }
+  p { margin:8px 0; }
+  ul { margin:8px 0; padding-left:24px; }
+  li { margin:6px 0; }
+  .muted { color:var(--muted); }
+  code { background:var(--soft); padding:1px 6px; border-radius:5px; font-size:.9em; }
+  a { color:var(--accent); }
+  @media print { body { background:#fff; font-size:11pt; } header { background:none; color:#000; padding:0 0 10px; } section { break-inside:avoid; border-color:#bbb; } }
+</style>
+</head>
+<body>
+<header><div>
+  <h1>Privacy and legal notes</h1>
+  <p>OT Risk Analysis · as of 16 November 2026 · <a href="../rechtliches.html" style="color:#fff">Deutsch</a></p>
+</div></header>
+<main>
+
+<section>
+  <h2>Privacy</h2>
+  <p><strong>In short: your analyses stay on your device. For the vulnerability search your browser queries three public data sources.</strong></p>
+  <ul>
+    <li><strong>Local storage only.</strong> Projects, components, ratings and notes are kept in your browser's storage (localStorage), unencrypted. With the start file on Windows they are additionally saved as a file on your PC. There is no server run by the operator, no user account and no transmission of your analyses.</li>
+    <li><strong>Queries to third parties.</strong> When you search for vulnerabilities or update threat data, your browser fetches data directly from the following services. Your IP address and the search term are transmitted (product name, vendor, version or CVE number), but not the project name, machine, customer or rating:
+      <ul>
+        <li>National Vulnerability Database, NIST, USA (<code>services.nvd.nist.gov</code>)</li>
+        <li>FIRST.org, USA, for EPSS scores (<code>api.first.org</code>)</li>
+        <li>GitHub, USA, for the CISA catalogue of known exploited vulnerabilities (<code>raw.githubusercontent.com</code>)</li>
+      </ul>
+      Without these functions no query is made.</li>
+    <li><strong>Hosting.</strong> The online edition is delivered through GitHub Pages (GitHub, Inc., USA). Like any web server, GitHub processes technical data when the page is requested, such as IP address, time and browser details. The operator of this page has no influence on that and no access to it. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</li>
+    <li><strong>Offline storage.</strong> So that the app starts without internet, the browser stores the program files locally (service worker). They contain no personal data.</li>
+    <li><strong>No cookies, no analytics, no advertising.</strong> The app loads no fonts or scripts from third parties.</li>
+    <li><strong>Deleting.</strong> Use “⋯ → Delete all data on this device” or clear your browser data.</li>
+  </ul>
+  <p class="muted">A list of unpatched vulnerabilities of a plant is confidential. For real company data use only devices approved for it, and pass reports and backup files only to authorised recipients.</p>
+</section>
+
+<section>
+  <h2>Disclaimer</h2>
+  <ul>
+    <li>The app is a working aid. Ratings and proposed measures are generated automatically from publicly available data and the details entered. They do not replace a review by qualified people.</li>
+    <li>No warranty is given for the correctness, completeness or currency of the vulnerability data, ratings and recommendations. Vulnerabilities may be missing or wrongly assigned.</li>
+    <li>The app is not certified and does not establish conformity with IEC 62443, the Cyber Resilience Act, the Machinery Regulation or any other rules.</li>
+    <li>The app is no substitute for legal, standards or security advice. Decisions on measures and risk acceptance are made by, and are the responsibility of, the user.</li>
+    <li>Use is at your own risk. The software is provided “as is”, without warranty of any kind, to the extent permitted by law. Liability for intent and gross negligence and for injury to life, body or health remains unaffected.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Data sources and licences</h2>
+  <ul>
+    <li><strong>NVD.</strong> This product uses the NVD API but is not endorsed or certified by the NVD.</li>
+    <li><strong>CVE.</strong> CVE identifiers and CVE descriptions come from the CVE Program. Copyright © 1999–2026, The MITRE Corporation. CVE is a registered trademark of The MITRE Corporation. Use is subject to the <a href="https://www.cve.org/Legal/TermsOfUse" rel="noopener">CVE Terms of Use</a>.</li>
+    <li><strong>EPSS.</strong> Exploit prediction scores come from FIRST.org. See EPSS at <a href="https://www.first.org/epss" rel="noopener">https://www.first.org/epss</a>.</li>
+    <li><strong>CISA KEV.</strong> The catalogue of known exploited vulnerabilities comes from the US agency CISA and is in the public domain (CC0 1.0).</li>
+    <li><strong>Example file.</strong> The file <code>beispiele/beispiel-trivy-scan.cdx.json</code> contains descriptions from the GitHub Advisory Database, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>, © GitHub, Inc. and contributors. It was generated with Trivy and has not been modified.</li>
+    <li><strong>Trivy.</strong> Trivy is an independent open-source program by Aqua Security (Apache License 2.0). It is not part of this app and is not shipped with it.</li>
+    <li><strong>CycloneDX.</strong> CycloneDX is an open standard of the OWASP Foundation. The app reads and writes files in this format.</li>
+    <li><strong>IEC 62443.</strong> The app refers only to the numbers of parts and requirements of the standard. It reproduces no text of the standard. The short descriptions of the measures are worded independently.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Trademarks and examples</h2>
+  <ul>
+    <li>Product and company names such as Siemens, SIMATIC, WinCC, SCALANCE, Microsoft, Windows, CODESYS, Apache Log4j, OpenSSL, Debian, Trivy or CycloneDX are trademarks or names of their respective owners. They are used descriptively only, to name affected products.</li>
+    <li>There is no affiliation with these companies and organisations. The app is neither reviewed nor endorsed by them.</li>
+    <li>The example machine and the example customer are fictitious. The vulnerabilities shown there are real, publicly known CVE entries for the product versions named. They say nothing about any particular plant.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Copyright in the program</h2>
+  <p>The program was created by the operator with the help of an AI assistant. It contains no program code taken from third parties and no third-party libraries, fonts or images. The source code can be viewed on GitHub.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>For questions and notices, including about possible infringements, please use the <a href="https://github.com/ot-risk-tools/ot-risikoanalyse/issues" rel="noopener">issues of the repository on GitHub</a>. Justified notices are reviewed and acted on promptly.</p>
+  <p class="muted">This is a private, non-commercial project without revenue and without advertising.</p>
+</section>
+
+</main>
+</body>
+</html>
